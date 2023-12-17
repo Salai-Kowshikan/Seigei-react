@@ -34,7 +34,9 @@ export default function LandingPage() {
         </div>
         <div className="flex flex-col w-full sm:flex-row py-[33vh] ">
           <div className="m-auto max-md:w-full max-md:ml-0">
-            <button className="text-white bg-inherit border-none cursor-pointer text-5xl font-extrabold my-auto max-md:text-4xl max-md:mt-10">
+            <button className="text-white bg-inherit border-none cursor-pointer text-5xl font-extrabold my-auto max-md:text-4xl max-md:mt-10"
+            onClick={() => navigate('/Chat')}
+            >
               VIDEO CHAT
             </button>
           </div>

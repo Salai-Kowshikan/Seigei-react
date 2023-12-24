@@ -13,3 +13,25 @@ body,html {
   height: 100vh;
   overscroll-behavior: none;
 }
+
+.login-card-transition-enter {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.login-card-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.login-card-transition-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.login-card-transition-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 300ms, transform 300ms;
+}

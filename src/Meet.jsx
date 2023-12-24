@@ -11,16 +11,16 @@ export default function MeetPage() {
                 </div>
                 <div className="flex-1 h-full flex-col flex justify-around items-center">
                     <div className="m-auto mx-2 h-[100px] w-[100px] flex justify-center items-center">
-                        <img src="public\Volume.png" className="h-full w-full" alt="Volume" />
+                        <img src="/Volume.png" className="h-full w-full" alt="Volume" />
                     </div>
                     <div className="m-auto mx-2 h-[100px] w-[100px] flex justify-center items-center">
-                        <img src="public\Camera.png" className="h-full w-full" alt="Volume" />
+                        <img src="/Camera.png" className="h-full w-full" alt="Volume" />
                     </div>
                     <div className="m-auto mx-2 h-[100px] w-[100px] flex justify-center items-center">
-                        <img src="public\Logo.png" className="h-full w-full" alt="Volume" />
+                        <img src="/Logo.png" className="h-full w-full" alt="Volume" />
                     </div>
                     <div className="m-auto mx-2 h-[100px] w-[100px] flex justify-center items-center">
-                        <img src="public\Logout.svg" className="h-full w-full" alt="Volume" />
+                        <img src="/Logout.svg" className="h-full w-full" alt="Volume" />
                     </div>
                 </div>
             </div>

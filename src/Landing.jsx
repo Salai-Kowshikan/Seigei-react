@@ -23,13 +23,13 @@ export default function LandingPage() {
               <div className="flex flex-col items-stretch w-[51%] ml-5 max-md:w-full max-md:ml-0">
                 <img
                   loading="lazy"
-                  src="/src/assets/Seigei.png" />
+                  src="/Seigei.png" />
               </div>
             </div>
           </div>
           <img
             loading="lazy"
-            src="/src/assets/arrow.png"
+            src="/Arrow.png"
             className="h-[200px] w-[200px]" />
         </div>
         <div className="flex flex-col w-full sm:flex-row py-[33vh] ">

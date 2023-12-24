@@ -11,7 +11,7 @@ export default function Navbar() {
                 <img
                     className="w-12 h-12 object-cover"
                     alt="Seigei logo"
-                    src="/src/assets/Logo.png" 
+                    src="/Logo.png" 
                 />
                 <span className="ml-2 font-inter text-black text-[36px] font-extrabold">
                     SeiGei

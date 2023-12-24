@@ -11,6 +11,7 @@ module.exports = {
       'primary':'#657CD5',
       'secondary': '#1C1922',
       'greenbtn': '#78D565',
+      'bluebtn': "#1C1922",
     }},
   },
   plugins: [],

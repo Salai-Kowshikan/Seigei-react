@@ -54,7 +54,7 @@ const LoginCard = ({ onLogin }) => {
     return (
         <>
             <div className="login-card bg-primary rounded-lg mx-auto h-full flex flex-col max-w-lg min-h-[60vh]" style={{ transition: 'opacity 200ms', opacity: opacity }}>
-                <h2 className="bg-accent my-0  rounded-xl py-6 text-center font-inter font-bold">{isSignUp ? 'Sign Up' : 'Log-In'}</h2>
+                <h2 className="bg-accent my-0 rounded-t-lg py-6 text-center font-inter font-bold">{isSignUp ? 'Sign Up' : 'Log-In'}</h2>
                 <form onSubmit={handleSubmit} className=' flex flex-col justify-around flex-grow'>
                     {isSignUp && (
                         <div className="pt-4 font-inter text-white font-bold px-6">

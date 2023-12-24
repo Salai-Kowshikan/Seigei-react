@@ -18,7 +18,7 @@ export default function Navbar() {
                 </span>
             </div>
             <div className="font-inter font-bold flex space-x-4">
-                <button className="text-black text-[24px] bg-inherit border-none cursor-pointer">ISL</button>
+                <button onClick={() => window.open('https://indiansignlanguage.org/', '_blank')} className="text-black text-[24px] bg-inherit border-none cursor-pointer">ISL</button>
                 <button className="text-black text-[24px] bg-inherit border-none cursor-pointer">About</button>
                 <button onClick={() => navigate('/Signin')} className="text-black text-[24px] bg-inherit border-none cursor-pointer">Login</button>
             </div>

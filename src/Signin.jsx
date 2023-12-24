@@ -30,7 +30,7 @@ export default function SignIn() {
                         Registered users have access to real-time translation
                     </div>
                 </div>
-                <div className="flex-1">
+                <div className="flex-1 mt-16">
                     {login ? <LoginCard setLogin={setLogin} /> : <SignUpCard setLogin={setLogin} />}
                 </div>
             </div>

@@ -5,22 +5,27 @@ export default function MeetPage() {
     return (
         <>
             <Navbar />
-            <div className="flex justify-center h-[85vh]">
-                <div className="border-accent bg-black border-solid border-[10px] w-[90%] ml-10 h-full sm:border-[20px] rounded-[10px] flex justify-center items-center flex-3 mt-6">
+            <div className="flex justify-center h-[70vh]">
+                <div className="border-accent bg-black border-solid border-[10px] w-[60%] h-full sm:border-[20px] rounded-[10px] flex-3 m-3">
 
                 </div>
-                <div className="flex-1 h-full flex-col flex justify-around items-center">
-                    <div className="m-auto mx-2 h-[100px] w-[100px] flex justify-center items-center">
-                        <img src="/Volume.png" className="h-full w-full" alt="Volume" />
+                <div className="flex-1 h-full flex-col justify-around items-center">
+                    <div className="border-accent bg-black border-solid border-[10px] sm:border-[20px] rounded-[10px] min-h-[50%] m-3">
+
                     </div>
-                    <div className="m-auto mx-2 h-[100px] w-[100px] flex justify-center items-center">
-                        <img src="/Camera.png" className="h-full w-full" alt="Volume" />
-                    </div>
-                    <div className="m-auto mx-2 h-[100px] w-[100px] flex justify-center items-center">
-                        <img src="/Logo.png" className="h-full w-full" alt="Volume" />
-                    </div>
-                    <div className="m-auto mx-2 h-[100px] w-[100px] flex justify-center items-center">
-                        <img src="/Logout.svg" className="h-full w-full" alt="Volume" />
+                    <div className="flex flex-1 py-5 items-center justify-center my-6">
+                        <div className="m-auto mx-2 h-[100px] w-[100px] flex justify-center items-center">
+                            <img src="/mic.png" className="h-full w-full" alt="Volume" />
+                        </div>
+                        <div className="m-auto mx-2 h-[100px] w-[100px] flex justify-center items-center">
+                            <img src="/Camera.png" className="h-full w-full" alt="Camera" />
+                        </div>
+                        <div className="m-auto mx-2 h-[100px] w-[100px] flex justify-center items-center">
+                            <img src="/sign.png" className="h-full w-full" alt="Logo" />
+                        </div>
+                        <div className="m-auto mx-2 h-[100px] w-[100px] flex justify-center items-center">
+                            <img src="/exit.png" className="h-full w-full" alt="Exit" />
+                        </div>
                     </div>
                 </div>
             </div>

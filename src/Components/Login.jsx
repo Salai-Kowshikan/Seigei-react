@@ -53,7 +53,7 @@ const LoginCard = ({ onLogin }) => {
 
     return (
         <>
-            <div className="login-card bg-primary rounded-lg mx-auto h-full flex flex-col max-w-lg min-h-[60vh]" style={{ transition: 'opacity 200ms', opacity: opacity }}>
+            <div className="login-card bg-primary rounded-lg mx-auto h-full flex flex-col max-w-md min-h-[60vh]" style={{ transition: 'opacity 200ms', opacity: opacity }}>
                 <h2 className="bg-accent my-0 rounded-t-lg py-6 text-center font-inter font-bold">{isSignUp ? 'Sign Up' : 'Log-In'}</h2>
                 <form onSubmit={handleSubmit} className=' flex flex-col justify-around flex-grow'>
                     {isSignUp && (
@@ -109,11 +109,11 @@ const LoginCard = ({ onLogin }) => {
                     )}
 
                     <div className="rounded-lg p-2 flex justify-center">
-                        <button type="submit" className='border-none bg-bluebtn rounded-lg w-[80%] text-white font-inter font-bold py-2'>{isSignUp ? 'Sign Up' : 'Log in'}</button>
+                        <button type="submit" className='border-none bg-bluebtn rounded-lg w-[80%] text-white font-inter font-bold py-2 cursor-pointer'>{isSignUp ? 'Sign Up' : 'Log in'}</button>
                     </div>
 
                     <div className="rounded-lg p-2 flex justify-center">
-                        <button type="button" onClick={handleToggleClick} className='border-none bg-bluebtn rounded-lg w-[80%] text-white font-inter font-bold py-2'>
+                        <button type="button" onClick={handleToggleClick} className='border-none bg-bluebtn rounded-lg w-[80%] text-white font-inter font-bold py-2 cursor-pointer'>
                             {isSignUp ? 'Already a user? Log in' : 'Sign Up for a New Account'}
                         </button>
                     </div>

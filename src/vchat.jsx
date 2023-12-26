@@ -1,10 +1,25 @@
-import React from "react";
+import React, { useEffect, useRef } from 'react';
 import Navbar from "./Components/Navbar";
 import { useNavigate } from "react-router-dom";
+import Webcam from 'react-webcam';
 
 export default function ChatPage() {
 
     const navigate = useNavigate()
+    // const videoRef = useRef();
+
+    // useEffect(() => {
+    //     navigator.mediaDevices.getUserMedia({ video: true })
+    //         .then(stream => {
+    //             let video = videoRef.current;
+    //             video.srcObject = stream;
+    //             video.play();
+    //         })
+    //         .catch(err => {
+    //             console.log("Something went wrong!", err);
+    //         });
+        
+    // }, []);
 
     return (
         <>
@@ -14,11 +29,11 @@ export default function ChatPage() {
                     Video Chat <br></br>with real time ISL Interpretter
                 </div>
                 <div className="flex-[1] flex flex-col justify-around items-center h-full">
-                    <div className="border-accent w-[70%] bg-black border-solid border-[10px] sm:border-[20px] rounded-[10px] flex justify-center items-center flex-[2] mt-6">
-                    </div>
+                        {/* <video ref={videoRef} width="100%" height="100%" /> */}
+                        <Webcam audio={true} className='border-accent w-[70%] border-solid border-[10px] sm:border-[20px] rounded-[10px] flex justify-center items-center flex-[2] mt-6'></Webcam>
                     <div className="flex-[0.8] flex w-[70%] justify-around">
                         <button className="bg-greenbtn rounded-[10px] border-none flex-1 mx-1 my-4 text-white font-inter font-bold text-[20px] cursor-pointer"
-                        onClick={()=> navigate('/Meet') }
+                            onClick={() => navigate('/Meet')}
                         > Start Meet </button>
                         <button className="bg-primary rounded-[10px] border-none flex-1 mx-1 my-4 text-white font-inter font-bold text-[20px] cursor-pointer"> Join Meet </button>
                     </div>

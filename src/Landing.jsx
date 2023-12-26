@@ -8,7 +8,7 @@ export default function LandingPage() {
 
   return (
     <>
-      <div className=" flex flex-col items-stretch pb-6 h-screen">
+      <div className=" flex flex-col items-stretch pb-6">
         <Navbar />
         <div className="self-center flex max-w-screen-lg mx-auto flex-col flex-wrap items-stretch mt-36 px-px max-md:mt-10">
           <div className="px-5 max-md:max-w-full">

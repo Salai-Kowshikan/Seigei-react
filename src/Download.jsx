@@ -5,7 +5,7 @@ export default function DownloadPage() {
     return (
         <>
             <Navbar />
-            <div className="flex h-screen flex-col gap-5 sm:gap-10 items-center justify-around">
+            <div className="flex h-[90svh] flex-col gap-5 sm:gap-10 items-center justify-between">
                 <div className="border-accent bg-black border-solid border-[10px] sm:border-[20px] rounded-[10px] flex justify-center items-center w-[50%] flex-1 mt-6">
                     
                 </div>

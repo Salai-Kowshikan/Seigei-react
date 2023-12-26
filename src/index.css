@@ -9,9 +9,10 @@
 
 body,html {
   margin: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100svw;
+  height: 100svh;
   overscroll-behavior: none;
+  padding: 0;
 }
 
 .login-card-transition-enter {
@@ -34,4 +35,8 @@ body,html {
   opacity: 0;
   transform: translateY(-20px);
   transition: opacity 300ms, transform 300ms;
+}
+/* CSS */
+.anim-fade-out {
+  transition: opacity 1s;
 }

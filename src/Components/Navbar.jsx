@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
 export default function Navbar({ aboutRef }) {
@@ -7,18 +7,12 @@ export default function Navbar({ aboutRef }) {
     const location = useLocation()
 
     const handleAboutClick = () => {
-        if (location.pathname === '/') { // Assuming '/' is the path of the landing page
-            aboutRef.current.scrollIntoView({ behavior: 'smooth' });
-        } else {
-            navigate('/'); // Navigate to the landing page
-        }
-    };
-
-    useEffect(() => {
         if (location.pathname === '/') {
-            aboutRef.current.scrollIntoView({ behavior: 'smooth' });
+          aboutRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          navigate('/');
         }
-    }, [location]);
+      };
 
     return (
         <div className="sticky top-0 z-50 bg-accent p-4 flex justify-between items-center">
@@ -36,7 +30,7 @@ export default function Navbar({ aboutRef }) {
                 <button onClick={() => window.open('https://indiansignlanguage.org/', '_blank')} className="text-black text-[24px] bg-inherit border-none cursor-pointer">ISL</button>
                 <button className="text-black text-[24px] bg-inherit border-none cursor-pointer"
                     onClick={handleAboutClick}
-                >About</button>
+                > {location.pathname === '/' ? 'About' : 'Home'}</button>
                 <button onClick={() => navigate('/Signin')} className="text-black text-[24px] bg-inherit border-none cursor-pointer">Login</button>
             </div>
         </div>

@@ -9,7 +9,7 @@ export default function SignIn() {
     return (
         <>
             <Navbar />
-            <div className="flex flex-col md:flex-row justify-center items-center h-full">
+            <div className="flex flex-col md:flex-row justify-center items-center h-[80svh]">
                 <div className="flex flex-col flex-1justify-center ml-10">
                     <div className="font-inter text-white font-extrabold text-[72px] py-8">
                         Log-In Or<br />Sign-Up For<br />An Account

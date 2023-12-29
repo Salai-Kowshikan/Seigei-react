@@ -30,7 +30,7 @@ export default function ChatPage() {
                 </div>
                 <div className="flex-[1] flex flex-col justify-around items-center h-full">
                         {/* <video ref={videoRef} width="100%" height="100%" /> */}
-                        <Webcam audio={true} className='border-accent w-[70%] border-solid border-[10px] sm:border-[20px] rounded-[10px] flex justify-center items-center flex-[2] mt-6'></Webcam>
+                        <Webcam mirrored={true} className='border-accent w-[70%] border-solid border-[10px] sm:border-[20px] rounded-[10px] flex justify-center items-center flex-[2] mt-6'></Webcam>
                     <div className="flex-[0.8] flex w-[70%] justify-around">
                         <button className="bg-greenbtn rounded-[10px] border-none flex-1 mx-1 my-4 text-white font-inter font-bold text-[20px] cursor-pointer"
                             onClick={() => navigate('/Meet')}

@@ -21,7 +21,7 @@ export default function LandingPage() {
             loading="lazy"
             src="/Arrow.png"
             className="h-[150px] w-[150px] cursor-pointer"
-            onClick={() => menuRef.current.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => menuRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' })}
             />
         </div>
         <img

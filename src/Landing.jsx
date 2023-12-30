@@ -45,6 +45,7 @@ export default function LandingPage() {
           > INTERPRETER </button>
         </div>
       </div>
+      <hr className="border-[#CF9FFF] border-8 mx-8 border-solid" />
       <div className="min-h-[90svh] flex w-full" ref={aboutRef}>
         <div className="flex-1 mx-8 font-inter text-white text-2xl font-bold">
           <h1 className="text-[96px] font-extrabold">
@@ -71,9 +72,8 @@ export default function LandingPage() {
             src="/Seigei.png" />
         </div>
       </div>
-      <hr className="border-[#CF9FFF] border-8 mx-8 border-solid" />
       <div className="w-full min-h-[90svh] my-8 p-8 font-inter text-white text-2xl font-bold">
-        <h1 className="text-[96px] font-extrabold text-center"> Enter Project Seigei</h1>
+        <h1 className="text-[96px] font-extrabold text-center leading-normal">Enter Project Seigei</h1>
         <div className="flex">
           <div className="flex-1">
             <p>

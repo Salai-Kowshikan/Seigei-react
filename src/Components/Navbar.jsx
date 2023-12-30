@@ -15,10 +15,10 @@ export default function Navbar({ aboutRef }) {
       };
 
     return (
-        <div className="sticky top-0 z-50 bg-accent p-4 flex justify-between items-center">
-            <div className="flex items-center cursor-pointer" onClick={() => navigate('/')}>
+        <div className="sticky top-0 z-50 bg-accent flex justify-between items-center">
+            <div className="flex items-center justify-center cursor-pointer p-2" onClick={() => navigate('/')}>
                 <img
-                    className="w-12 h-12 object-cover"
+                    className="w-12 h-12 object-cover mt-2"
                     alt="Seigei logo"
                     src="/Logo.png"
                 />
@@ -26,12 +26,12 @@ export default function Navbar({ aboutRef }) {
                     SeiGei
                 </span>
             </div>
-            <div className="font-inter font-bold flex space-x-4">
-                <button onClick={() => window.open('https://indiansignlanguage.org/', '_blank')} className="text-black text-[24px] bg-inherit border-none cursor-pointer">ISL</button>
-                <button className="text-black text-[24px] bg-inherit border-none cursor-pointer"
+            <div className="flex space-x-4 p-2">
+                <button onClick={() => window.open('https://indiansignlanguage.org/', '_blank')} className="text-black font-inter font-bold text-[24px] bg-inherit border-none cursor-pointer">ISL</button>
+                <button className="text-black font-inter font-bold text-[24px] bg-inherit border-none cursor-pointer"
                     onClick={handleAboutClick}
                 > {location.pathname === '/' ? 'About' : 'Home'}</button>
-                <button onClick={() => navigate('/Signin')} className="text-black text-[24px] bg-inherit border-none cursor-pointer">Login</button>
+                <button onClick={() => navigate('/Signin')} className="text-black font-inter font-bold text-[24px] bg-inherit border-none cursor-pointer">Login</button>
             </div>
         </div>
     );

@@ -69,7 +69,7 @@ export default function LandingPage() {
         <div className="flex-1 flex justify-center items-center max-md:hidden">
           <img
             loading="lazy"
-            src="/Seigei.png" />
+            src="/About.png" />
         </div>
       </div>
       <div className="w-full min-h-[90svh] my-8 p-8 font-inter text-white text-2xl font-bold">
@@ -95,7 +95,7 @@ export default function LandingPage() {
           <div className="flex-1 flex justify-center items-center max-md:hidden">
             <img
               loading="lazy"
-              src="/Seigei.png" />
+              src="/Project.png" />
           </div>
 
         </div>

@@ -48,7 +48,7 @@ export default function LandingPage() {
       <hr className="border-[#CF9FFF] border-8 mx-8 border-solid" />
       <div className="min-h-[90svh] flex w-full" ref={aboutRef}>
         <div className="flex-1 mx-8 font-inter text-white text-2xl font-bold">
-          <h1 className="text-[96px] font-extrabold">
+          <h1 className="text-[96px] font-extrabold leading-normal">
             About
           </h1>
           <p>

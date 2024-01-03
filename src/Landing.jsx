@@ -22,7 +22,7 @@ export default function LandingPage() {
             src="/Arrow.png"
             className="h-[150px] w-[150px] cursor-pointer"
             onClick={() => menuRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' })}
-            />
+          />
         </div>
         <img
           loading="lazy"
@@ -46,7 +46,7 @@ export default function LandingPage() {
         </div>
       </div>
       <hr className="border-[#CF9FFF] border-8 mx-8 border-solid" />
-      <div className="min-h-[90svh] flex w-full" ref={aboutRef}>
+      {/* <div className="min-h-[90svh] flex w-full" ref={aboutRef}>
         <div className="flex-1 mx-8 font-inter text-white text-2xl font-bold">
           <h1 className="text-[96px] font-extrabold leading-normal">
             About
@@ -70,6 +70,33 @@ export default function LandingPage() {
           <img
             loading="lazy"
             src="/About.png" />
+        </div>
+      </div> */}
+      <div ref={aboutRef} className="w-full min-h-[90svh] my-8 p-8 font-inter text-white text-2xl font-bold">
+        <h1 className="text-[96px] font-extrabold text-center leading-normal mb-0">About</h1>
+        <div className="flex">
+          <div className="flex-1">
+            <p>
+              The Indian Sign Language (ISL)
+              remains as of yet one of the
+              premier contributions of the
+              deaf and mute community of
+              India
+            </p>
+            <p>
+              And despite being the most used sign-language in the world in terms of users,
+              overall awareness is far too low. With
+              barely 300 official interpreters within
+              India, there exists a veritable gap
+              between the hearing and the deaf
+            </p>
+          </div>
+          <div className="flex-1 flex justify-center items-center max-md:hidden">
+          <img
+            loading="lazy"
+            src="/About.png" />
+          </div>
+
         </div>
       </div>
       <div className="w-full min-h-[90svh] my-8 p-8 font-inter text-white text-2xl font-bold">

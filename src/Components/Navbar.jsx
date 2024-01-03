@@ -18,7 +18,7 @@ export default function Navbar({ aboutRef }) {
         <div className="sticky top-0 z-50 bg-accent flex justify-between items-center max-w-full">
             <div className="flex items-center justify-center cursor-pointer p-2" onClick={() => navigate('/')}>
                 <img
-                    className="w-12 h-12 object-cover mt-2"
+                    className="w-12 h-12 object-contain mt-2"
                     alt="Seigei logo"
                     src="/Logo.png"
                 />

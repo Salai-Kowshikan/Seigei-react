@@ -8,7 +8,8 @@ export default function MeetPage() {
             <Navbar />
             <div className="flex justify-center h-[80svh]">
                 <div className="flex-col flex-1 h-full">
-                    <div className="border-accent bg-black border-solid border-[10px] min-w-full rounded-[5px] min-h-[80%] m-3">
+                    <div className="border-accent bg-black border-solid border-[10px] min-w-full rounded-[5px] min-h-[80%] m-3 relative">
+                        <Webcam height={120} width={180} mirrored={true} className="border-accent flex-1 bg-black border-solid border-[10px] rounded-[5px] min-h-[40%] m-3 absolute bottom-0 right-0" />
                     </div>
                     <div className="flex py-2 items-center justify-around my-6">
                         <button className="m-auto mx-2 h-[75px] w-[75px] flex justify-center items-center bg-black rounded-full p-3 border-none cursor-pointer">
@@ -26,7 +27,6 @@ export default function MeetPage() {
                     </div>
                 </div>
                 <div className="flex-[0.5] flex flex-col justify-center items-center px-8">
-                    <Webcam height={240} width={360} mirrored={true} className="border-accent flex-1 bg-black border-solid border-[10px] rounded-[5px] min-h-[40%] m-3" />
                     <div className="min-w-[25svw] bg-black m-4 bg-opacity-60 flex flex-col rounded-lg flex-grow">
                         <div className="bg-primary rounded-t-lg">
                             <h2 className="text-white font-inter font-extrabold text-center">Meeting Chat</h2>

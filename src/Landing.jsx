@@ -46,35 +46,9 @@ export default function LandingPage() {
         </div>
       </div>
       <hr className="border-[#CF9FFF] border-8 mx-8 border-solid" />
-      {/* <div className="min-h-[90svh] flex w-full" ref={aboutRef}>
-        <div className="flex-1 mx-8 font-inter text-white text-2xl font-bold">
-          <h1 className="text-[96px] font-extrabold leading-normal">
-            About
-          </h1>
-          <p>
-            The Indian Sign Language (ISL)
-            remains as of yet one of the
-            premier contributions of the
-            deaf and mute community of
-            India
-          </p>
-          <p>
-            And despite being the most used sign-language in the world in terms of users,
-            overall awareness is far too low. With
-            barely 300 official interpreters within
-            India, there exists a veritable gap
-            between the hearing and the deaf
-          </p>
-        </div>
-        <div className="flex-1 flex justify-center items-center max-md:hidden">
-          <img
-            loading="lazy"
-            src="/About.png" />
-        </div>
-      </div> */}
-      <div ref={aboutRef} className="w-full min-h-[90svh] my-8 p-8 font-inter text-white text-2xl font-bold">
-        <h1 className="text-[96px] font-extrabold text-center leading-normal mb-0">About</h1>
-        <div className="flex">
+      <div ref={aboutRef} className="w-full min-h-[90svh] mobile:my-8 mobile:p-8 p-4 font-inter text-white text-2xl font-bold">
+        <h1 className="text-[96px] font-extrabold text-center leading-normal m-0">About</h1>
+        <div className="flex max-lg:flex-col">
           <div className="flex-1">
             <div>
               <p>
@@ -93,7 +67,7 @@ export default function LandingPage() {
               </p>
             </div>
           </div>
-          <div className="flex-1 flex justify-center items-center max-md:hidden">
+          <div className="flex-1 flex justify-center items-center ">
           <img
             loading="lazy"
             src="/About.png" />
@@ -101,9 +75,9 @@ export default function LandingPage() {
 
         </div>
       </div>
-      <div className="w-full min-h-[90svh] my-8 p-8 font-inter text-white text-2xl font-bold">
+      <div className="w-full min-h-[90svh] mobile:my-8 mobile:p-8 p-4 font-inter text-white text-2xl font-bold">
         <h1 className="text-[96px] font-extrabold text-center leading-normal mb-0">Enter Project Seigei</h1>
-        <div className="flex">
+        <div className="flex max-lg:flex-col">
           <div className="flex-1">
             <p>
               With technology pervading through the
@@ -121,7 +95,7 @@ export default function LandingPage() {
               of the deaf/mute people!
             </p>
           </div>
-          <div className="flex-1 flex justify-center items-center max-md:hidden">
+          <div className="flex-1 flex justify-center items-center">
             <img
               loading="lazy"
               src="/Project.png" />

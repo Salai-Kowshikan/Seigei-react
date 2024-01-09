@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "./Components/Navbar";
+import Navbar from "./Components/Navbar/index";
 import { useNavigate } from "react-router-dom";
 
 export default function UploadPage() {

@@ -12,7 +12,10 @@ module.exports = {
       'secondary': '#1C1922',
       'greenbtn': '#78D565',
       'bluebtn': "#1C1922",
-    }},
+    },
+    screens: {
+      'mobile': '540px',
+    },},
   },
   plugins: [],
 };

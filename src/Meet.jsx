@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "./Components/Navbar";
+import Navbar from "./Components/Navbar/index";
 import Webcam from "react-webcam";
 
 export default function MeetPage() {

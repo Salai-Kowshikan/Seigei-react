@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import Navbar from "./Components/Navbar";
+import Navbar from "./Components/Navbar/index";
 import { useNavigate } from "react-router-dom";
 
 export default function LandingPage() {
@@ -76,20 +76,22 @@ export default function LandingPage() {
         <h1 className="text-[96px] font-extrabold text-center leading-normal mb-0">About</h1>
         <div className="flex">
           <div className="flex-1">
-            <p>
-              The Indian Sign Language (ISL)
-              remains as of yet one of the
-              premier contributions of the
-              deaf and mute community of
-              India
-            </p>
-            <p>
-              And despite being the most used sign-language in the world in terms of users,
-              overall awareness is far too low. With
-              barely 300 official interpreters within
-              India, there exists a veritable gap
-              between the hearing and the deaf
-            </p>
+            <div>
+              <p>
+                The Indian Sign Language (ISL)
+                remains as of yet one of the
+                premier contributions of the
+                deaf and mute community of
+                India
+              </p>
+              <p>
+                And despite being the most used sign-language in the world in terms of users,
+                overall awareness is far too low. With
+                barely 300 official interpreters within
+                India, there exists a veritable gap
+                between the hearing and the deaf
+              </p>
+            </div>
           </div>
           <div className="flex-1 flex justify-center items-center max-md:hidden">
           <img

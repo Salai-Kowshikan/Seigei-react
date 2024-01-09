@@ -5,11 +5,11 @@ export default function Navbar({ aboutRef }) {
   const navigate = useNavigate();
   const location = useLocation();
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const menuRef = React.useRef(null);
+  const dropDownRef = React.useRef(null);
 
   useEffect(() => {
     const handleDropDownClose = (e) => {
-        if (!menuRef.current.contains(e.target)) {
+        if (!dropDownRef.current.contains(e.target)) {
             setDropdownOpen(false);
         }
     }
@@ -63,7 +63,7 @@ export default function Navbar({ aboutRef }) {
         </button>
       </div>
       <div 
-            ref={menuRef} className="mobile:hidden relative">
+            ref={dropDownRef} className="mobile:hidden relative">
         <button
           onClick={() => setDropdownOpen(!dropdownOpen)}
           className="text-black font-inter px-2 font-bold text-[24px] bg-inherit border-none cursor-pointer"

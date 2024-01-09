@@ -42,7 +42,6 @@ body,html {
   transform: translateY(-20px);
   transition: opacity 300ms, transform 300ms;
 }
-/* CSS */
 .anim-fade-out {
   transition: opacity 1s;
 }

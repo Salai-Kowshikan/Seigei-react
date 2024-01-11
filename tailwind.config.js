@@ -17,5 +17,5 @@ module.exports = {
       'mobile': '540px',
     },},
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/aspect-ratio'),],
 };

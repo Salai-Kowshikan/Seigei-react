@@ -10,7 +10,7 @@ export default function SignIn() {
         <>
             <Navbar />
             <div className="flex flex-col md:flex-row justify-center items-center h-full">
-                <div className="flex flex-col flex-1 justify-center ml-10 flex-shrink-2">
+                <div className="flex flex-col flex-1 justify-center ml-10 flex-shrink-[2]">
                     <div className="font-inter text-white font-extrabold lg:text-7xl text-5xl py-8">
                         Log-In Or<br />Sign-Up For<br />An Account
                     </div>

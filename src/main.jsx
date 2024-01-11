@@ -1,13 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import Landing from './Landing.jsx'
+import Landing from './pages/Landing/Landing.jsx'
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import SignIn from './Signin.jsx'
-import UploadPage from './Upload.jsx'
-import DownloadPage from './Download.jsx'
-import ChatPage from './vchat.jsx'
-import MeetPage from './Meet.jsx'
+import SignIn from './pages/Signin/Signin.jsx'
+import UploadPage from './pages/Interpreter/Upload.jsx'
+import DownloadPage from './pages/Interpreter/Download.jsx'
+import ChatPage from './pages/Meet/vchat.jsx'
+import MeetPage from './pages/Meet/Meet.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

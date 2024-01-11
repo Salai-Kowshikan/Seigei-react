@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "./Components/Navbar/index";
+import Navbar from "../../Components/Navbar/index";
 
 export default function DownloadPage() {
     return (

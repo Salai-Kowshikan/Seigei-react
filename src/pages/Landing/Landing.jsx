@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import Navbar from "./Components/Navbar/index";
+import Navbar from "../../Components/Navbar/index";
 import { useNavigate } from "react-router-dom";
 
 export default function LandingPage() {
@@ -38,13 +38,13 @@ export default function LandingPage() {
       >
         <div className="flex justify-around w-[90%] mx-4 max-md:flex-col items-center">
           <button
-            className="text-white bg-inherit border-none font-inter font-extrabold cursor-pointer text-5xl py-6"
+            className="text-white bg-inherit border-none font-inter font-extrabold cursor-pointer text-5xl py-6 flex-1"
             onClick={() => navigate("/Chat")}
           >
             {" "}
             VIDEO CHAT{" "}
           </button>
-          <div className="w-full flex justify-center items-center">
+          <div className="flex-1 w-full flex justify-center items-center">
             <svg
               width="184"
               className="max-md:hidden"
@@ -69,7 +69,7 @@ export default function LandingPage() {
             <hr className="border-[#CF9FFF] border-4 w-full md:hidden border-solid" />
           </div>
           <button
-            className="text-white bg-inherit border-none font-inter font-extrabold cursor-pointer text-5xl py-6"
+            className="text-white bg-inherit border-none font-inter font-extrabold cursor-pointer text-5xl py-6 flex-1"
             onClick={() => navigate("/Upload")}
           >
             {" "}

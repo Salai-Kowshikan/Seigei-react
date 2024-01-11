@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Navbar from "./Components/Navbar/index";
-import LoginCard from "./Components/Login/index";
+import Navbar from "../../Components/Navbar/index";
+import LoginCard from "../../Components/Login/index";
 
 export default function SignIn() {
 
@@ -9,12 +9,12 @@ export default function SignIn() {
     return (
         <>
             <Navbar />
-            <div className="flex flex-col md:flex-row justify-center items-center h-[80svh]">
-                <div className="flex flex-col flex-1 justify-center ml-10 flex-shrink-1">
-                    <div className="font-inter text-white font-extrabold text-[72px] py-8">
+            <div className="flex flex-col md:flex-row justify-center items-center h-full">
+                <div className="flex flex-col flex-1 justify-center ml-10 flex-shrink-2">
+                    <div className="font-inter text-white font-extrabold lg:text-7xl text-5xl py-8">
                         Log-In Or<br />Sign-Up For<br />An Account
                     </div>
-                    <div className="font-inter text-white font-bold text-xl">
+                    <div className="font-inter text-white font-bold lg:text-xl text-lg">
                         Registered users have access to real-time translation
                     </div>
                 </div>

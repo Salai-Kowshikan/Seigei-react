@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import Navbar from "./Components/Navbar";
+import Navbar from "../../Components/Navbar";
 import { useNavigate } from "react-router-dom";
 import Webcam from 'react-webcam';
 

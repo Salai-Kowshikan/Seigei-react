@@ -80,9 +80,9 @@ export default function LandingPage() {
       <hr className="border-[#CF9FFF] border-8 mx-8 border-solid" />
       <div
         ref={aboutRef}
-        className="w-full min-h-[90svh] mobile:my-8 mobile:p-8 p-4 font-inter text-white md:text-2xl text-lg font-bold"
+        className="w-full flex flex-col justify-center items-center min-h-[90svh] mobile:my-8 mobile:p-8 p-4 font-inter text-white md:text-2xl text-lg font-bold"
       >
-        <h1 className="md:text-8xl text-6xl font-extrabold text-center leading-normal m-0">
+        <h1 className="md:text-8xl text-6xl font-extrabold text-center leading-normal my-4">
           About
         </h1>
         <div className="flex max-lg:flex-col">
@@ -105,8 +105,9 @@ export default function LandingPage() {
           </div>
         </div>
       </div>
-      <div className="w-full min-h-[90svh] mobile:my-8 mobile:p-8 p-4 font-inter text-white md:text-2xl text-lg font-bold">
-        <h1 className="md:text-8xl text-6xl font-extrabold text-center leading-normal mb-0">
+      <hr className="border-[#CF9FFF] border-8 mx-8 border-solid" />
+      <div className="w-full min-h-[90svh] flex flex-col justify-center items-center mobile:my-8 mobile:p-8 p-4 font-inter text-white md:text-2xl text-lg font-bold">
+        <h1 className="md:text-8xl text-6xl font-extrabold text-center leading-normal my-4">
           Enter Project Seigei
         </h1>
         <div className="flex max-lg:flex-col">

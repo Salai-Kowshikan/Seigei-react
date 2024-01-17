@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import Navbar from "../../Components/Navbar/index";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 export default function LandingPage() {
   const navigate = useNavigate();
@@ -13,15 +14,30 @@ export default function LandingPage() {
       <div className="flex justify-center items-center min-h-[90svh] max-md:flex-col">
         <div className="mx-6 p-3">
           <div className="font-inter text-white">
-            <h1 className="font-extrabold md:text-8xl text-6xl my-2">
+            <motion.h1
+              className="font-extrabold md:text-8xl text-6xl my-2"
+              initial={{ opacity: 0, x: -100 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1 }}
+            >
               Project <br /> Seigei
-            </h1>
-            <h2 className="font-bold text-xl">Translating Silence</h2>
+            </motion.h1>
+            <motion.h2
+              className="font-bold text-xl"
+              initial={{ opacity: 0, x: -100 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, delay: 0.5 }}
+            >
+              Translating Silence
+            </motion.h2>
           </div>
-          <img
+          <motion.img
             loading="lazy"
             src="/Arrow.png"
             className="h-[150px] w-[150px] cursor-pointer"
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 1, type: "spring", stiffness: 180, damping: 8 }}
             onClick={() =>
               menuRef.current.scrollIntoView({
                 behavior: "smooth",
@@ -30,7 +46,7 @@ export default function LandingPage() {
             }
           />
         </div>
-        <img loading="lazy" className="max-md:w-[80%]" src="/Seigei.png" />
+        <motion.img loading="lazy" className="max-md:w-[80%]" initial={{opacity: 0}} animate={{opacity:1}} transition={{duration: 1}} src="/Seigei.png" />
       </div>
       <div
         className="flex justify-center items-center min-h-[90svh] "

@@ -12,7 +12,7 @@ export default function LandingPage() {
     <>
       <Navbar aboutRef={aboutRef} />
       <div className="flex justify-center items-center min-h-[90svh] max-md:flex-col">
-        <div className="mx-6 p-3 flex-1">
+        <div className="mx-6 px-20 py-3 flex-1">
           <div className="font-inter text-white">
             <motion.h1
               className="font-extrabold md:text-8xl text-6xl my-2"

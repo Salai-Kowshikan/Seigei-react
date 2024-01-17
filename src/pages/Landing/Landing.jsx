@@ -12,7 +12,7 @@ export default function LandingPage() {
     <>
       <Navbar aboutRef={aboutRef} />
       <div className="flex justify-center items-center min-h-[90svh] max-md:flex-col">
-        <div className="mx-6 p-3">
+        <div className="mx-6 p-3 flex-1">
           <div className="font-inter text-white">
             <motion.h1
               className="font-extrabold md:text-8xl text-6xl my-2"
@@ -37,7 +37,13 @@ export default function LandingPage() {
             className="h-[150px] w-[150px] cursor-pointer"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 1.5, type: "spring", stiffness: 180, damping: 8 }}
+            transition={{
+              duration: 0.5,
+              delay: 1.5,
+              type: "spring",
+              stiffness: 180,
+              damping: 8,
+            }}
             onClick={() =>
               menuRef.current.scrollIntoView({
                 behavior: "smooth",
@@ -46,7 +52,15 @@ export default function LandingPage() {
             }
           />
         </div>
-        <motion.img className="max-md:w-[80%]" initial={{opacity: 0}} animate={{opacity:1}} transition={{duration: 1}} src="/Seigei.png" />
+        <div className="flex-1">
+          <motion.img
+            className="max-md:w-[80%]"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            src="/Seigei.png"
+          />
+        </div>
       </div>
       <div
         className="flex justify-center items-center min-h-[90svh] "

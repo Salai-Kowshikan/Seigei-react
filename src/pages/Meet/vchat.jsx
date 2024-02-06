@@ -1,24 +1,17 @@
-import React, { useEffect, useRef } from "react";
+import React, { useState } from "react";
 import Navbar from "../../Components/Navbar";
 import { useNavigate } from "react-router-dom";
 import Webcam from "react-webcam";
+import { v4 as uuidv4 } from "uuid";
 
 export default function ChatPage() {
   const navigate = useNavigate();
-  // const videoRef = useRef();
+  const [inviteLink, setInviteLink] = useState(null);
 
-  // useEffect(() => {
-  //     navigator.mediaDevices.getUserMedia({ video: true })
-  //         .then(stream => {
-  //             let video = videoRef.current;
-  //             video.srcObject = stream;
-  //             video.play();
-  //         })
-  //         .catch(err => {
-  //             console.log("Something went wrong!", err);
-  //         });
-
-  // }, []);
+  const createRoom = () => {
+    const newUUID = uuidv4();
+    setInviteLink(newUUID);
+  };
 
   return (
     <>
@@ -29,27 +22,31 @@ export default function ChatPage() {
         </div>
         <div className="flex-[2] flex flex-col justify-around items-center h-full w-full min-h-[60vh]">
           <div className="flex-[2] w-full flex justify-center items-center">
-              <Webcam
-                mirrored={true}
-                className="border-accent aspect-[16/9] w-[70%] max-h-[270px] max-w-[480px] border-solid border-[10px] rounded-lg flex justify-center items-center mt-6"
-              ></Webcam>
+            <Webcam
+              mirrored={true}
+              className="border-accent aspect-[16/9] w-[70%] max-h-[270px] max-w-[480px] border-solid border-[10px] rounded-lg flex justify-center items-center mt-6"
+            ></Webcam>
           </div>
           <div className="flex w-[70%] justify-around max-w-[480px]">
             <button
               className="bg-greenbtn rounded-[10px] border-none flex-1 mx-1 my-4 py-4 text-white font-inter font-bold text-[20px] cursor-pointer"
-              onClick={() => navigate("/Meet")}
+              onClick={createRoom}
             >
-              {" "}
-              Start Meet{" "}
+              Create a new room
             </button>
             <button className="bg-primary rounded-[10px] border-none flex-1 mx-1 my-4 py-4 text-white font-inter font-bold text-[20px] cursor-pointer">
-              {" "}
-              Join Meet{" "}
+              Join an existing room
             </button>
           </div>
-          <button className="w-[70%] max-w-[480px] border-none rounded-[10px] font-inter text-[20px] font-bold mx-1 py-4 cursor-pointer">
-            Meet code
-          </button>
+          {inviteLink && (
+            <a
+              href={`https://salai-kowshikan.github.io/seigei-webrtc/index.html?room=${inviteLink}`}
+              target="blank"
+            >
+              Your invite link:{" "}
+              {`https://salai-kowshikan.github.io/seigei-webrtc/index.html?room=${inviteLink}`}
+            </a>
+          )}
         </div>
       </div>
     </>

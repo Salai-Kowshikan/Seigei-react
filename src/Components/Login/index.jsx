@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const LoginCard = ({ onLogin }) => {
+const LoginCard = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [name, setName] = useState('');

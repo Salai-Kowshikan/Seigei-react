@@ -1,12 +1,30 @@
 import React, { useState } from "react";
 import Navbar from "../../Components/Navbar";
-import { useNavigate } from "react-router-dom";
 import Webcam from "react-webcam";
 import { v4 as uuidv4 } from "uuid";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 export default function ChatPage() {
-  const navigate = useNavigate();
   const [inviteLink, setInviteLink] = useState(null);
+  const [copySuccess, setCopySuccess] = useState("");
+
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(
+        `https://salai-kowshikan.github.io/seigei-webrtc/index.html?room=${inviteLink}`
+      );
+      setCopySuccess("Copied!");
+    } catch (err) {
+      setCopySuccess("Failed to copy text");
+    }
+  };
 
   const createRoom = () => {
     const newUUID = uuidv4();
@@ -28,25 +46,43 @@ export default function ChatPage() {
             ></Webcam>
           </div>
           <div className="flex w-[70%] justify-around max-w-[480px]">
-            <button
-              className="bg-greenbtn rounded-[10px] border-none flex-1 mx-1 my-4 py-4 text-white font-inter font-bold text-[20px] cursor-pointer"
-              onClick={createRoom}
-            >
-              Create a new room
-            </button>
-            <button className="bg-primary rounded-[10px] border-none flex-1 mx-1 my-4 py-4 text-white font-inter font-bold text-[20px] cursor-pointer">
-              Join an existing room
-            </button>
+            <Dialog>
+              <DialogTrigger
+                className="bg-greenbtn rounded-[10px] border-none flex-1 mx-1 my-4 py-4 text-white font-inter font-bold text-[20px]"
+                onClick={createRoom}
+              >
+                Create a new room
+              </DialogTrigger>
+              <DialogContent className="bg-accent">
+                <DialogHeader className="p-4">
+                  <DialogTitle className="my-2">
+                    {" "}
+                    Share the meeting link with the other participant and then
+                    click on the link to open it in a new window{" "}
+                  </DialogTitle>
+                  <DialogDescription>
+                    <div className="flex w-full justify-evenly m-4">
+                      <button onClick={copyToClipboard} className="bg-primary text-white px-4 py-2 rounded-lg font-extrabold">
+                        Copy to clipboard
+                      </button>
+                      <button
+                        className="bg-primary text-white px-4 py-2 rounded-lg font-extrabold"
+                        onClick={() =>
+                          window.open(
+                            `https://salai-kowshikan.github.io/seigei-webrtc/index.html?room=${inviteLink}`,
+                            "_blank"
+                          )
+                        }
+                      >
+                        Open in new tab
+                      </button>
+                    </div>
+                    <div className="w-full text-center">{copySuccess}</div>
+                  </DialogDescription>
+                </DialogHeader>
+              </DialogContent>
+            </Dialog>
           </div>
-          {inviteLink && (
-            <a
-              href={`https://salai-kowshikan.github.io/seigei-webrtc/index.html?room=${inviteLink}`}
-              target="blank"
-            >
-              Your invite link:{" "}
-              {`https://salai-kowshikan.github.io/seigei-webrtc/index.html?room=${inviteLink}`}
-            </a>
-          )}
         </div>
       </div>
     </>

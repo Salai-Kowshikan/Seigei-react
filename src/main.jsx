@@ -7,7 +7,6 @@ import SignIn from './pages/Signin/Signin.jsx'
 import UploadPage from './pages/Interpreter/Upload.jsx'
 import DownloadPage from './pages/Interpreter/Download.jsx'
 import ChatPage from './pages/Meet/vchat.jsx'
-import MeetPage from './pages/Meet/Meet.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -18,7 +17,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='/Upload' element={<UploadPage />} />
         <Route path='/Download' element={<DownloadPage />} />
         <Route path='/Chat' element={<ChatPage />} />
-        <Route path='/Meet' element={<MeetPage />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

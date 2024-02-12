@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 const LoginCard = () => {
     const [email, setEmail] = useState('');
@@ -10,9 +11,21 @@ const LoginCard = () => {
     const [confirmPasswordError, setConfirmPasswordError] = useState('');
     const [opacity, setOpacity] = useState(1);
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        onLogin(email, password);
+
+        try {
+            let response;
+            if (isSignUp) {
+                response = await axios.post('http://localhost:3000/register', { name, email, password });
+            } else {
+                response = await axios.post('http://localhost:3000/login', { email, password });
+            }
+
+            console.log(response.data);
+        } catch (error) {
+            console.error(error);
+        }
     };
 
     const handleToggleClick = () => {
@@ -23,16 +36,6 @@ const LoginCard = () => {
             setConfirmPassword('');
             setOpacity(1);
         }, 200);
-    };
-
-    const handleSignUpClick = () => {
-        setIsSignUp(true);
-    };
-
-    const handleLoginClick = () => {
-        setIsSignUp(false);
-        setName('');
-        setConfirmPassword('');
     };
 
     const handlePasswordBlur = () => {

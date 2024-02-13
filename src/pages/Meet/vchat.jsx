@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../../Components/Navbar";
 import Webcam from "react-webcam";
 import { v4 as uuidv4 } from "uuid";
@@ -9,11 +9,12 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '../../Components/ui/dialog';
+} from "../../Components/ui/dialog";
 
 export default function ChatPage() {
   const [inviteLink, setInviteLink] = useState(null);
   const [copySuccess, setCopySuccess] = useState("");
+  const [exit, setExit] = useState(false);
 
   const copyToClipboard = async () => {
     try {
@@ -30,6 +31,15 @@ export default function ChatPage() {
     const newUUID = uuidv4();
     setInviteLink(newUUID);
   };
+
+  const urlParams = new URLSearchParams(window.location.search);
+  setExit(urlParams.get("exit") === "true")
+
+  useEffect(() => {
+    if (exit){
+      alert("Thank you for using our service. Have a great day!")
+    }
+  })
 
   return (
     <>
@@ -62,16 +72,16 @@ export default function ChatPage() {
                   </DialogTitle>
                   <DialogDescription>
                     <div className="flex w-full justify-evenly m-4">
-                      <button onClick={copyToClipboard} className="bg-primary text-white px-4 py-2 rounded-lg font-extrabold">
+                      <button
+                        onClick={copyToClipboard}
+                        className="bg-primary text-white px-4 py-2 rounded-lg font-extrabold"
+                      >
                         Copy to clipboard
                       </button>
                       <button
                         className="bg-primary text-white px-4 py-2 rounded-lg font-extrabold"
                         onClick={() =>
-                          window.open(
-                            `https://salai-kowshikan.github.io/seigei-webrtc/index.html?room=${inviteLink}`,
-                            "_blank"
-                          )
+                          (window.location.href = `https://salai-kowshikan.github.io/seigei-webrtc/index.html?room=${inviteLink}`)
                         }
                       >
                         Open in new tab

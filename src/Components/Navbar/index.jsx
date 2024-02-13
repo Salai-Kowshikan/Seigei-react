@@ -9,7 +9,7 @@ export default function Navbar({ aboutRef }) {
 
   useEffect(() => {
     const handleDropDownClose = (e) => {
-        if (!dropDownRef.current.contains(e.target)) {
+        if (dropDownRef.current && !dropDownRef.current.contains(e.target)) {
             setDropdownOpen(false);
         }
     }

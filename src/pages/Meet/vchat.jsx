@@ -9,7 +9,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
+} from '../../Components/ui/dialog';
 
 export default function ChatPage() {
   const [inviteLink, setInviteLink] = useState(null);

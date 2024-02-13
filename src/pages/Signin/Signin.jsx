@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "../../Components/Navbar/index";
 import LoginCard from "../../Components/Login/index";
+import Footer from "@/Components/Footer";
 
 
 export default function SignIn() {
@@ -25,6 +26,7 @@ export default function SignIn() {
           <LoginCard />
         </div>
       </div>
+      <Footer />
     </>
   );
 }

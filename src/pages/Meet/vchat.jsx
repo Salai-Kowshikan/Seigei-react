@@ -10,6 +10,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "../../Components/ui/dialog";
+import Footer from "@/Components/Footer";
 
 export default function ChatPage() {
   const [inviteLink, setInviteLink] = useState(null);
@@ -33,13 +34,13 @@ export default function ChatPage() {
   };
 
   const urlParams = new URLSearchParams(window.location.search);
-  setExit(urlParams.get("exit") === "true")
+  setExit(urlParams.get("exit") === "true");
 
   useEffect(() => {
-    if (exit){
-      alert("Thank you for using our service. Have a great day!")
+    if (exit) {
+      alert("Thank you for using our service. Have a great day!");
     }
-  })
+  });
 
   return (
     <>
@@ -81,7 +82,7 @@ export default function ChatPage() {
                       <button
                         className="bg-primary text-white px-4 py-2 rounded-lg font-extrabold"
                         onClick={() =>
-                          (window.location.href = `https://salai-kowshikan.github.io/seigei-webrtc/index.html?room=${inviteLink}`)
+                          (window.location.href = `https://salai-kowshikan.github.io/seigei-webrtc/index.html?room=${inviteLink}&signmode=true`)
                         }
                       >
                         Open in new tab
@@ -95,6 +96,7 @@ export default function ChatPage() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

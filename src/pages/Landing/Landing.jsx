@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import Navbar from "../../Components/Navbar/index";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import Footer from "@/Components/Footer";
 
 export default function LandingPage() {
   const navigate = useNavigate();
@@ -159,6 +160,7 @@ export default function LandingPage() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

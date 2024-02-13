@@ -17,9 +17,9 @@ const LoginCard = () => {
         try {
             let response;
             if (isSignUp) {
-                response = await axios.post('http://localhost:3000/register', { name, email, password });
+                response = await axios.post('https://seigei-api.onrender.com/register', { name, email, password });
             } else {
-                response = await axios.post('http://localhost:3000/login', { email, password });
+                response = await axios.post('https://seigei-api.onrender.com/login', { email, password });
             }
 
             console.log(response.data);

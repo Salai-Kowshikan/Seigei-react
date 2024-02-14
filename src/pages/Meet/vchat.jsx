@@ -33,19 +33,21 @@ export default function ChatPage() {
     setInviteLink(newUUID);
   };
 
-  const urlParams = new URLSearchParams(window.location.search);
-  setExit(urlParams.get("exit") === "true");
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    setExit(urlParams.get("exit") === "true");
+  }, []);
 
   useEffect(() => {
     if (exit) {
       alert("Thank you for using our service. Have a great day!");
     }
-  });
+  }, []);
 
   return (
     <>
       <Navbar />
-      <div className="flex flex-col lg:flex-row justify-evenly items-center my-6 lg:max-h-[85svh]">
+      <div className="flex flex-col lg:flex-row justify-evenly items-center my-6 md:h-[80svh] ">
         <div className="flex-1 flex justify-center items-center text-white font-inter font-extrabold text-5xl px-8 flex-shrink-[2]">
           Video Chat <br></br>with real time ISL Interpreter
         </div>

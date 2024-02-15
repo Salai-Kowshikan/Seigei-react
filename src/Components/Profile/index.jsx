@@ -9,7 +9,7 @@ export default function Profile({ name, img, role }) {
       <div className="rounded-full overflow-hidden">
         <img src={img} className="rounded-full w-48 h-48"/>
       </div>
-      <svg
+      {/* <svg
         width="274px"
         height="274px"
         viewBox="0 0 400.00 400.00"
@@ -49,7 +49,10 @@ export default function Profile({ name, img, role }) {
             {name}
           </text>
         </g>
-      </svg>
+      </svg> */}
+      <div className="bg-primary px-4 py-2 my-4 font-inter font-extrabold text-white rounded-lg">
+        {name}
+      </div>
     </div>
   );
 }

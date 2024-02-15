@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const LoginCard = () => {
@@ -11,6 +12,8 @@ const LoginCard = () => {
     const [confirmPasswordError, setConfirmPasswordError] = useState('');
     const [opacity, setOpacity] = useState(1);
 
+    const navigate = useNavigate();
+
     const handleSubmit = async (event) => {
         event.preventDefault();
 
@@ -18,8 +21,16 @@ const LoginCard = () => {
             let response;
             if (isSignUp) {
                 response = await axios.post('https://seigei-api.onrender.com/register', { name, email, password });
+                if (response.data.success){
+                    alert("Registration Successful! Please log in to continue.")
+                    setIsSignUp(false);
+                }
             } else {
                 response = await axios.post('https://seigei-api.onrender.com/login', { email, password });
+                if (response.data.success) {
+                    alert("Login Successful!")
+                    navigate('/')
+                }
             }
 
             console.log(response.data);

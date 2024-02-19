@@ -20,27 +20,22 @@ const members = [
     img: "/Profile/RISHI_KUMAR.jpg",
   },
   {
-    name: "Poojaa S",
-    role: "BACKEND",
-    img: "/Profile/POOJAA_S.jpg",
-  },
-  {
     name: "Rohith",
-    role: "MACHINE LEARNING",
+    role: "MACHINE LEARNING & OPS",
     img: "/Profile/ROHITH.jpg",
   },
   {
-    name: "Abhijith",
+    name: "Abhijith Varma",
     role: "MACHINE LEARNING",
     img: "/Profile/ABHIJITH.jpeg",
   },
   {
-    name: "Ansh",
+    name: "Ansh Bomb",
     role: "MACHINE LEARNING",
     img: "/Profile/ANSH.jpg",
   },
   {
-    name: "Girish",
+    name: "Girish S",
     role: "MACHINE LEARNING",
     img: "/Profile/GIRISH_S.jpeg",
   },
@@ -48,6 +43,11 @@ const members = [
     name: "Shashank Narayan",
     role: "D E S I G N",
     img: "/Profile/SHASHANK_NARAYAN.jpg",
+  },
+  {
+    name: "Poojaa S",
+    role: "BACKEND",
+    img: "/Profile/POOJAA_S.jpg",
   },
 ];
 

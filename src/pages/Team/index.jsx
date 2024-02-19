@@ -8,7 +8,7 @@ export default function TeamPage() {
     <>
       <Navbar />
       <div className="flex flex-col items-center justify-center">
-        <h1 className="text-4xl font-extrabold my-6 text-white font-inter">
+        <h1 className="text-4xl font-extrabold my-6 text-textc font-inter">
           {" "}
           MEET THE TEAM!
         </h1>

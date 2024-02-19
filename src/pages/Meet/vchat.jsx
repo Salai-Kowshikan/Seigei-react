@@ -48,7 +48,7 @@ export default function ChatPage() {
     <>
       <Navbar />
       <div className="flex flex-col lg:flex-row justify-evenly items-center my-6 md:h-[80svh] ">
-        <div className="flex-1 flex justify-center items-center text-white font-inter font-extrabold text-5xl px-8 flex-shrink-[2]">
+        <div className="flex-1 flex justify-center items-center text-textc font-inter font-extrabold text-5xl px-8 flex-shrink-[2]">
           Video Chat <br></br>with real time ISL Interpreter
         </div>
         <div className="flex-[2] flex flex-col justify-around items-center h-full w-full min-h-[60vh]">

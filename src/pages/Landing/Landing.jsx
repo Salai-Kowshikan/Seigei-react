@@ -14,7 +14,7 @@ export default function LandingPage() {
       <Navbar aboutRef={aboutRef} />
       <div className="flex justify-center items-center min-h-[90svh] max-md:flex-col">
         <div className="md:pl-20 py-3 basis-1/2">
-          <div className="font-inter text-white">
+          <div className="font-inter text-textc">
             <motion.h1
               className="font-extrabold md:text-8xl text-6xl my-2"
               initial={{ opacity: 0, x: -100 }}
@@ -63,13 +63,14 @@ export default function LandingPage() {
           />
         </div>
       </div>
+      <hr className="border-accent border-8 mx-8 border-solid" />
       <div
         className="flex justify-center items-center min-h-[90svh] "
         ref={menuRef}
       >
         <div className="flex justify-around w-[90%] mx-4 max-md:flex-col items-center">
           <button
-            className="text-white bg-inherit border-none font-inter font-extrabold cursor-pointer text-5xl py-6 flex-1"
+            className="text-textc bg-inherit border-none font-inter font-extrabold cursor-pointer text-5xl py-6 flex-1"
             onClick={() => navigate("/Chat")}
           >
             {" "}
@@ -97,10 +98,10 @@ export default function LandingPage() {
                 fill="#CF9FFF"
               />
             </svg>
-            <hr className="border-[#CF9FFF] border-4 w-full md:hidden border-solid" />
+            <hr className="border-accent border-4 w-full md:hidden border-solid" />
           </div>
           <button
-            className="text-white bg-inherit border-none font-inter font-extrabold cursor-pointer text-5xl py-6 flex-1"
+            className="text-textc bg-inherit border-none font-inter font-extrabold cursor-pointer text-5xl py-6 flex-1"
             onClick={() => navigate("/Upload")}
           >
             {" "}
@@ -108,16 +109,16 @@ export default function LandingPage() {
           </button>
         </div>
       </div>
-      <hr className="border-[#CF9FFF] border-8 mx-8 border-solid" />
+      <hr className="border-accent border-8 mx-8 border-solid" />
       <div
         ref={aboutRef}
-        className="w-full flex flex-col justify-center items-center min-h-[90svh] mobile:my-8 mobile:p-8 p-4 font-inter text-white md:text-2xl text-lg font-bold"
+        className="w-full flex flex-col justify-center items-center min-h-[90svh] mobile:my-8 mobile:p-8 p-4 font-inter text-textc md:text-2xl text-lg font-bold"
       >
         <h1 className="md:text-8xl text-6xl font-extrabold text-center leading-normal my-4">
           About
         </h1>
-        <div className="flex max-lg:flex-col">
-          <div className="flex-1">
+        <div className="flex max-lg:flex-col items-center">
+          <div className="flex-1 text-justify">
             <div>
               <p>
                 The Indian Sign Language (ISL) remains as of yet one of the
@@ -131,18 +132,18 @@ export default function LandingPage() {
               </p>
             </div>
           </div>
-          <div className="flex-1 flex justify-center items-center ">
+          <div className="flex mx-6 justify-center items-center ">
             <img loading="lazy" src="/About.png" className="max-md:w-[80%]" />
           </div>
         </div>
       </div>
-      <hr className="border-[#CF9FFF] border-8 mx-8 border-solid" />
-      <div className="w-full min-h-[90svh] flex flex-col justify-center items-center mobile:my-8 mobile:p-8 p-4 font-inter text-white md:text-2xl text-lg font-bold">
+      <hr className="border-accent border-8 mx-8 border-solid" />
+      <div className="w-full min-h-[90svh] flex flex-col justify-center items-center mobile:my-8 mobile:p-8 p-4 font-inter text-textc md:text-2xl text-lg font-bold">
         <h1 className="md:text-8xl text-6xl font-extrabold text-center leading-normal my-4">
           Enter Project Seigei
         </h1>
-        <div className="flex max-lg:flex-col">
-          <div className="flex-1">
+        <div className="flex max-lg:flex-col items-center">
+          <div className="flex-1 text-justify">
             <p>
               With technology pervading through the lives of the common person
               in India, an idea was born -- Why not have an interpreter that one
@@ -155,7 +156,7 @@ export default function LandingPage() {
               anywhere, for the greater good of the deaf/mute people!
             </p>
           </div>
-          <div className="flex-1 flex justify-center items-center">
+          <div className=" flex justify-center items-center">
             <img loading="lazy" src="/Project.png" className="max-md:w-[80%]" />
           </div>
         </div>

@@ -20,6 +20,11 @@ const members = [
     img: "/Profile/RISHI_KUMAR.jpg",
   },
   {
+    name: "Poojaa S",
+    role: "BACKEND",
+    img: "/Profile/POOJAA_S.jpg",
+  },
+  {
     name: "Rohith",
     role: "MACHINE LEARNING & OPS",
     img: "/Profile/ROHITH.jpg",
@@ -43,11 +48,6 @@ const members = [
     name: "Shashank Narayan",
     role: "D E S I G N",
     img: "/Profile/SHASHANK_NARAYAN.jpg",
-  },
-  {
-    name: "Poojaa S",
-    role: "BACKEND",
-    img: "/Profile/POOJAA_S.jpg",
   },
 ];
 

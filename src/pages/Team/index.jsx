@@ -1,9 +1,16 @@
 import Navbar from "@/Components/Navbar";
 import Profile from "@/Components/Profile";
-import React from "react";
+import React, { useEffect } from "react";
 import { members } from "@/constants";
+import Footer from "@/Components/Footer";
 
 export default function TeamPage() {
+
+  useEffect(() => {
+    //scroll to top
+    window.scrollTo(0, 0);
+  })
+
   return (
     <>
       <Navbar />
@@ -23,6 +30,7 @@ export default function TeamPage() {
           ))}
         </div>
       </div>
+      <Footer />
     </>
   );
 }

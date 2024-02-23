@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React, {useRef, useState} from "react";
 import Navbar from "../../Components/Navbar/index";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -6,10 +6,13 @@ import axios from "axios";
 export default function UploadPage() {
   const navigate = useNavigate()
   const fileInput = useRef()
+  const [loader,setLoader] = useState(false)
+  let text = ""
 
   const url = import.meta.env.VITE_APP_API_URL;
 
   const uploadVideo = async () => {
+    setLoader(true)
     const file = fileInput.current.files[0]
     const formData = new FormData()
     formData.append('video', file)
@@ -17,8 +20,12 @@ export default function UploadPage() {
     try{
         const response = await axios.post(`${url}/upload`, formData)
         console.log(response)
+        text = response.data.data
     } catch(error){
         console.log("Deiii file la prachana: " + error)
+    } finally {
+      setLoader(false)
+      navigate(`/download?text=${text}`)
     }
 
   }
@@ -45,8 +52,9 @@ export default function UploadPage() {
             <button
               className="bg-accent font-inter font-bold text-white border-none rounded-lg py-3 md:py-6 text-lg md:text-2xl w-[80%] cursor-pointer"
               onClick={uploadVideo}
+              disabled={loader}
             >
-              Upload Video
+              {loader ? "Processing" : "Upload video"}
             </button>
           </div>
         </div>

@@ -20,7 +20,7 @@ export default function UploadPage() {
     try{
         const response = await axios.post(`${url}/upload`, formData)
         console.log(response)
-        text = response.data.data
+        text = response.data.content
     } catch(error){
         console.log("Deiii file la prachana: " + error)
     } finally {

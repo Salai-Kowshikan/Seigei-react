@@ -42,7 +42,7 @@ export default function Navbar({ aboutRef }) {
       <div className="flex space-x-4 p-2 max-mobile:hidden">
         <button
           onClick={() =>
-            window.open("https://indiansignlanguage.org/", "_blank")
+            window.open("https://www.islrtc.nic.in/", "_blank")
           }
           className="text-black font-inter font-bold text-[24px] bg-inherit border-none cursor-pointer"
         >

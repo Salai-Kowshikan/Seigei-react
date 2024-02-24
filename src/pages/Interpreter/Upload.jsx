@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React, {useRef, useState} from "react";
 import Navbar from "../../Components/Navbar/index";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -6,6 +6,8 @@ import axios from "axios";
 export default function UploadPage() {
   const navigate = useNavigate()
   const fileInput = useRef()
+  const [text,setText] = useState("")
+  const [thumbnail, setThumbnail] = useState('/upload.png');
 
   const url = import.meta.env.VITE_APP_API_URL;
 
@@ -23,6 +25,14 @@ export default function UploadPage() {
 
   }
 
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      console.log("file changed")
+      setThumbnail(URL.createObjectURL(file));
+    }
+  };
+
   return (
     <>
       <Navbar />
@@ -35,13 +45,13 @@ export default function UploadPage() {
         >
           <div className="border-accent bg-black border-solid border-[10px] rounded-lg flex justify-center items-center aspect-[16/9] w-[80%] md:mt-12">
             <img
-              src="/upload.png"
+              src={thumbnail}
               className="h-[80px] w-[80px] lg:h-[120px] lg:w-[120px]"
               alt="Upload"
             />
           </div>
           <div>
-            <input type="file" accept="video/*" ref={fileInput}></input>
+            <input type="file" accept="video/*" ref={fileInput} onChange={handleFileChange} ></input>
             <button
               className="bg-accent font-inter font-bold text-white border-none rounded-lg py-3 md:py-6 text-lg md:text-2xl w-[80%] cursor-pointer"
               onClick={uploadVideo}

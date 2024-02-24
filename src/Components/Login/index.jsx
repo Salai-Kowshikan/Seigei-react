@@ -11,6 +11,7 @@ const LoginCard = () => {
     const [passwordError, setPasswordError] = useState('');
     const [confirmPasswordError, setConfirmPasswordError] = useState('');
     const [opacity, setOpacity] = useState(1);
+    const [error, setError] = useState('');
 
     const navigate = useNavigate();
 
@@ -24,11 +25,15 @@ const LoginCard = () => {
                 if (response.data.success){
                     alert("Registration Successful! Please log in to continue.")
                     setIsSignUp(false);
+                    setError('')
+                } else {
+                    setError(response.data.message)
                 }
             } else {
                 response = await axios.post('https://seigei-api.onrender.com/login', { email, password });
                 if (response.data.success) {
                     alert("Login Successful!")
+                    sessionStorage.setItem('username', response.data.username);
                     navigate('/')
                 }
             }
@@ -132,6 +137,9 @@ const LoginCard = () => {
                         </button>
                     </div>
                 </form>
+                <div>
+                    {error && <p>{error}</p>}
+                </div>
             </div>
         </>
     );

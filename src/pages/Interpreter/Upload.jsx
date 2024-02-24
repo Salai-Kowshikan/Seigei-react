@@ -45,20 +45,22 @@ export default function UploadPage() {
       const formData = new FormData();
       formData.append("video", file);
       try {
+
+        console.log("response poguthu")
         const response = await axios.post(`${url}/audio_convert`, formData,{
           responseType: "blob",
         });
         const blob = new Blob([response.data], { type: "video/mp4" });
-        const url = URL.createObjectURL(blob);
+        const downloadURL = URL.createObjectURL(blob);
         const link = document.createElement('a');
 
-        link.href = url;
+        link.href = downloadURL;
         link.download = 'audio.mp3';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
       } catch (err) {
-        console.log("Audio la prachanaaa");
+        console.log("Audio la prachanaaa" + err);
       }
     } else {
       alert("Video upload pandra panda");
@@ -71,30 +73,22 @@ export default function UploadPage() {
       const formData = new FormData();
       formData.append("video", file);
       try {
+        console.log("response poguthu")
         const response = await axios.post(`${url}/download-video`, formData, {
           responseType: "blob",
-        });
-        // Create a new Blob object from the response data
-        const blob = new Blob([response.data], { type: "video/mp4" });
-
-        // Create an object URL for the Blob
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement('a');
-
-        // Set the href and download attributes of the link
-        link.href = url;
-        link.download = 'video.mp4'; // Or any other filename you want
-  
-        // Append the link to the body
+        }
+        );
+        const blob = new Blob([response.data], { type: "video/mp4" })
+        const downloadURL = URL.createObjectURL(blob)
+        const link = document.createElement('a')
+        link.href = downloadURL;
+        link.download = 'video.mp4'
         document.body.appendChild(link);
-  
-        // Programmatically click the link
         link.click();
-  
-        // Remove the link from the body
         document.body.removeChild(link);
+        console.log(response.data)
       } catch (err) {
-        console.log("video la prachanaaa");
+        console.log("video la prachanaaa: " + err);
       }
     } else {
       alert("Video upload pandra panda");

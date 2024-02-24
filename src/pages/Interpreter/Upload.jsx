@@ -35,7 +35,7 @@ export default function UploadPage() {
         link.click();
         document.body.removeChild(link);
       } catch (err) {
-        console.log("Audio la prachanaaa");
+        console.log("Audio la prachanaaa" + err);
       }
     } else {
       alert("Video upload pandra panda");
@@ -48,6 +48,7 @@ export default function UploadPage() {
       const formData = new FormData();
       formData.append("video", file);
       try {
+        console.log("response poguthu")
         const response = await axios.post(`${url}/download-video`, formData, {
           responseType: "blob",
         });
@@ -59,8 +60,9 @@ export default function UploadPage() {
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
+        console.log(response.data)
       } catch (err) {
-        console.log("video la prachanaaa");
+        console.log("video la prachanaaa: " + err);
       }
     } else {
       alert("Video upload pandra panda");

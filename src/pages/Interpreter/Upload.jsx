@@ -7,6 +7,7 @@ export default function UploadPage() {
   const navigate = useNavigate()
   const fileInput = useRef()
   const [loader,setLoader] = useState(false)
+  const [thumbnail, setThumbnail] = useState("/upload.svg")
   let text = ""
 
   const url = import.meta.env.VITE_APP_API_URL;

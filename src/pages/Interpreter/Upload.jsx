@@ -39,6 +39,39 @@ export default function UploadPage() {
     }
   };
 
+  const handleDownloadAudio = async () => {
+    setLoader(true)
+    const file = fileInput.current.files[0]
+    if (file){
+    const formData = new FormData()
+    formData.append('video', file)
+    try {
+      const response = await axios.post(`${url}/audio_convert`,formData)
+      console.log(response.data)
+    } catch (err){
+      console.log("Audio la prachanaaa")
+    }
+    } else {
+      alert("Video upload pandra panda")
+    }
+  }
+  const handleDownloadVideo = async () => {
+    setLoader(true)
+    const file = fileInput.current.files[0]
+    if (file){
+    const formData = new FormData()
+    formData.append('video', file)
+    try {
+      const response = await axios.post(`${url}/download-video`,formData)
+      console.log(response.data)
+    } catch (err){
+      console.log("video la prachanaaa")
+    }
+    } else {
+      alert("Video upload pandra panda")
+    }
+  }
+
   return (
     <>
       <Navbar />
@@ -58,13 +91,22 @@ export default function UploadPage() {
           </div>
           <div>
             <input type="file" accept="video/*" ref={fileInput} onChange={handleFileChange} ></input>
-            <button
+            {/* <button
               className="bg-accent font-inter font-bold text-white border-none rounded-lg py-3 md:py-6 text-lg md:text-2xl w-[80%] cursor-pointer"
               onClick={uploadVideo}
               disabled={loader}
             >
               {loader ? "Processing" : "Upload video"}
-            </button>
+            </button> */}
+            <button className="text-white font-inter font-bold border-none py-4 px-[96px] bg-greenbtn rounded-[10px]">
+            Download Transcript as PDF
+          </button>
+          <button className="text-white font-inter font-bold border-none py-4 px-[96px] bg-greenbtn rounded-[10px]" onClick={handleDownloadAudio}>
+            Download Audio
+          </button>
+          <button className="text-white font-inter font-bold border-none py-4 px-[96px] bg-greenbtn rounded-[10px]" onClick={handleDownloadVideo}>
+            Download video
+          </button>
           </div>
         </div>
       </div>

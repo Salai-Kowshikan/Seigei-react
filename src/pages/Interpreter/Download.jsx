@@ -1,29 +1,8 @@
 import React from "react";
 import Navbar from "../../Components/Navbar/index";
+import axios from "axios";
 
 export default function DownloadPage() {
-
-  const handleDownload = async (type) => {
-
-    if (type === "pdf") {
-      const response = await axios.post(`${url}/download-text`, {
-        text: text
-      })
-      console.log(response)
-  }
-    if (type === "audio") {
-      const response = await axios.post(`${url}/download-audio`, {
-        text: text
-      })
-      console.log(response)
-  }
-    if (type === "video") {
-      const response = await axios.post(`${url}/download-video`, {
-        text: text
-      })
-      console.log(response)
-  }
-  }
 
   return (
     <>
@@ -34,7 +13,7 @@ export default function DownloadPage() {
           <button className="text-white font-inter font-bold border-none py-4 px-[96px] bg-greenbtn rounded-[10px]">
             Download Transcript as PDF
           </button>
-          <button className="text-white font-inter font-bold border-none py-4 px-[96px] bg-greenbtn rounded-[10px]">
+          <button className="text-white font-inter font-bold border-none py-4 px-[96px] bg-greenbtn rounded-[10px]" onClick={handleDownload}>
             Download Audio
           </button>
           <button className="text-white font-inter font-bold border-none py-4 px-[96px] bg-greenbtn rounded-[10px]">

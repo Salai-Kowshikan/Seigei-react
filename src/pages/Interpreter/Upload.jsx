@@ -77,10 +77,11 @@ export default function UploadPage() {
       try {
         const response = await axios.post(`${url}/upload`, formData)
         const doc = new jsPDF();
-        doc.text(response.data, 10, 10);
+        doc.text(response.data.content, 10, 10);
         doc.save("download.pdf");
+        console.log(response.data);
       } catch (err) {
-        console.log("pdf la prachanaaa");
+        console.log("pdf la prachanaaa"+ err);
       }
     } else {
       alert("Video upload pandra panda");

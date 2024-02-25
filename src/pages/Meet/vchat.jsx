@@ -23,8 +23,8 @@ import {
 export default function ChatPage() {
   const [inviteLink, setInviteLink] = useState(null);
   const [copySuccess, setCopySuccess] = useState("");
-  const [mode,setMode] = useState("")
-  const navigate = useNavigate()
+  const [mode, setMode] = useState("");
+  const navigate = useNavigate();
 
   const copyToClipboard = async () => {
     try {
@@ -47,10 +47,9 @@ export default function ChatPage() {
     if (urlParams.get("exit") === "true") {
       alert("Thank you for using our service. Have a great day!");
     }
-    if(!sessionStorage.getItem("username")) {
-      alert("Please log in!")
-      navigate('/Signin')
-
+    if (!sessionStorage.getItem("username")) {
+      alert("Please log in!");
+      navigate("/Signin");
     }
   }, []);
 
@@ -69,11 +68,14 @@ export default function ChatPage() {
             ></Webcam>
           </div>
           <div>
-            <Select value={mode} onValueChange={(value) => {
-              setMode(value)
-              console.log(value)
-            }}>
-              <SelectTrigger className="w-[180px] bg-accent font-inter font-bold text-white" >
+            <Select
+              value={mode}
+              onValueChange={(value) => {
+                setMode(value);
+                console.log(value);
+              }}
+            >
+              <SelectTrigger className="w-[180px] bg-accent font-inter font-bold text-white">
                 <SelectValue placeholder="Select User Mode" />
               </SelectTrigger>
               <SelectContent>
@@ -85,18 +87,19 @@ export default function ChatPage() {
           <div className="flex w-[70%] justify-around max-w-[480px]">
             <Dialog>
               <DialogTrigger
-                className="bg-greenbtn rounded-[10px] border-none flex-1 mx-1 my-4 py-4 text-white font-inter font-bold text-[20px]"
+                className={`bg-greenbtn rounded-[10px] border-none flex-1 mx-1 my-4 py-4 text-white font-inter font-bold text-[20px] ${
+                  mode === "" ? "bg-greenbtn opacity-50" : "bg-greenbtn"
+                }`}
                 onClick={createRoom}
-
+                disabled={mode === ""}
               >
                 Create a new room
               </DialogTrigger>
-              <DialogContent className="bg-accent">
+              <DialogContent className="bg-background">
                 <DialogHeader className="p-4">
                   <DialogTitle className="my-2">
-                    {" "}
                     Share the meeting link with the other participant and then
-                    click on the link to open it in a new window{" "}
+                    click on the link to open it in a new window
                   </DialogTitle>
                   <DialogDescription>
                     <div className="flex w-full justify-evenly m-4">
@@ -109,7 +112,7 @@ export default function ChatPage() {
                       <button
                         className="bg-primary text-white px-4 py-2 rounded-lg font-extrabold"
                         onClick={() =>
-                          (window.location.href = `https://salai-kowshikan.github.io/seigei-webrtc/index.html?room=${inviteLink}&signmode=true`)
+                          (window.location.href = `https://salai-kowshikan.github.io/seigei-webrtc/index.html?room=${inviteLink}&mode=${mode}`)
                         }
                       >
                         Open in new tab

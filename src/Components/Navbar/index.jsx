@@ -1,11 +1,12 @@
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
 export default function Navbar({ aboutRef }) {
   const navigate = useNavigate();
   const location = useLocation();
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const dropDownRef = React.useRef(null);
+  const dropDownRef = useRef(null);
+  const [username, setUsername] = useState(sessionStorage.getItem('username') || "");
 
   useEffect(() => {
     const handleDropDownClose = (e) => {
@@ -14,8 +15,8 @@ export default function Navbar({ aboutRef }) {
         }
     }
       window.addEventListener("mousedown", handleDropDownClose);
+      console.log(window.sessionStorage.getItem("username"))
   }, []);
-
   const handleAboutClick = () => {
     if (location.pathname === "/") {
       aboutRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -99,7 +100,7 @@ export default function Navbar({ aboutRef }) {
                 onClick={() => navigate("/Signin")}
                 className="text-black font-inter font-bold text-xl bg-inherit border-none cursor-pointer"
               >
-                Login
+                {username ? "Logout" : "Login"}
               </button>
             </div>
           </div>

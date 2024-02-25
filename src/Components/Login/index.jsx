@@ -33,7 +33,7 @@ const LoginCard = () => {
                 response = await axios.post('https://seigei-api.onrender.com/login', { email, password });
                 if (response.data.success) {
                     alert("Login Successful!")
-                    sessionStorage.setItem('username', response.data.username);
+                    sessionStorage.setItem('username', response.data.primary_key);
                     navigate('/')
                 }
             }

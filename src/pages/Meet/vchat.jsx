@@ -9,13 +9,20 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "../../Components/ui/dialog";
+} from "@/Components/ui/dialog";
 import Footer from "@/Components/Footer";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/Components/ui/select";
 
 export default function ChatPage() {
   const [inviteLink, setInviteLink] = useState(null);
   const [copySuccess, setCopySuccess] = useState("");
-  const [exit, setExit] = useState(false);
+  const [mode,setMode] = useState("")
 
   const copyToClipboard = async () => {
     try {
@@ -35,11 +42,7 @@ export default function ChatPage() {
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
-    setExit(urlParams.get("exit") === "true");
-  }, []);
-
-  useEffect(() => {
-    if (exit) {
+    if (urlParams.get("exit") === "true") {
       alert("Thank you for using our service. Have a great day!");
     }
   }, []);
@@ -58,11 +61,26 @@ export default function ChatPage() {
               className="border-accent aspect-[16/9] w-[70%] max-h-[270px] max-w-[480px] border-solid border-[10px] rounded-lg flex justify-center items-center mt-6"
             ></Webcam>
           </div>
+          <div>
+            <Select value={mode} onValueChange={(value) => {
+              setMode(value)
+              console.log(value)
+            }}>
+              <SelectTrigger className="w-[180px] bg-accent font-inter font-bold text-white" >
+                <SelectValue placeholder="Select User Mode" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="sign">Sign User</SelectItem>
+                <SelectItem value="not-sign">Non-sign User</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
           <div className="flex w-[70%] justify-around max-w-[480px]">
             <Dialog>
               <DialogTrigger
                 className="bg-greenbtn rounded-[10px] border-none flex-1 mx-1 my-4 py-4 text-white font-inter font-bold text-[20px]"
                 onClick={createRoom}
+
               >
                 Create a new room
               </DialogTrigger>

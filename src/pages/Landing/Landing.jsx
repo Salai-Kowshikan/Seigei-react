@@ -1,26 +1,26 @@
 import React, { useEffect, useRef, useState } from "react";
-import Navbar from "../../Components/Navbar/index";
+import Navbar from "@/Components/Navbar/index";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import Footer from "@/Components/Footer";
 
 export default function LandingPage() {
-  const navigate = useNavigate()
-  const menuRef = useRef()
-  const aboutRef = useRef()
+  const navigate = useNavigate();
+  const menuRef = useRef();
+  const aboutRef = useRef();
   const [username, setUsername] = useState("");
 
   useEffect(() => {
     const storedUsername = window.sessionStorage.getItem("username");
     setUsername(storedUsername);
   }, []);
-  
+
   const handleVideoChat = () => {
     if (username) {
-      navigate("/Chat")
+      navigate("/Chat");
     } else {
-      alert("Sign in pandra eruma")
-      navigate("/Signin")
+      alert("Sign in pandra eruma");
+      navigate("/Signin");
     }
   };
 
@@ -86,8 +86,8 @@ export default function LandingPage() {
         <div className="flex justify-around w-[90%] mx-4 max-md:flex-col items-center">
           <button
             className="text-textc bg-inherit border-none font-inter font-extrabold cursor-pointer text-5xl py-6 flex-1"
-            // onClick={handleVideoChat}
-            onClick={() => navigate('/Chat')}
+            onClick={handleVideoChat}
+            // onClick={() => navigate("/Chat")}
           >
             {" "}
             VIDEO CHAT{" "}
@@ -120,8 +120,7 @@ export default function LandingPage() {
             className="text-textc bg-inherit border-none font-inter font-extrabold cursor-pointer text-5xl py-6 flex-1"
             onClick={() => navigate("/Upload")}
           >
-            {" "}
-            INTERPRETER{" "}
+            INTERPRETER
           </button>
         </div>
       </div>

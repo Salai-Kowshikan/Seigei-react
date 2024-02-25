@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../../Components/Navbar";
 import Webcam from "react-webcam";
+import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import {
   Dialog,
@@ -23,6 +24,7 @@ export default function ChatPage() {
   const [inviteLink, setInviteLink] = useState(null);
   const [copySuccess, setCopySuccess] = useState("");
   const [mode,setMode] = useState("")
+  const navigate = useNavigate()
 
   const copyToClipboard = async () => {
     try {
@@ -44,6 +46,11 @@ export default function ChatPage() {
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get("exit") === "true") {
       alert("Thank you for using our service. Have a great day!");
+    }
+    if(!sessionStorage.getItem("username")) {
+      alert("Please log in!")
+      navigate('/Signin')
+
     }
   }, []);
 

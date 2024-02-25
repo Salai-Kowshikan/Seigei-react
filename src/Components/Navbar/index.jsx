@@ -6,17 +6,17 @@ export default function Navbar({ aboutRef }) {
   const location = useLocation();
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropDownRef = useRef(null);
-  const [username, setUsername] = useState(sessionStorage.getItem('username') || "");
 
   useEffect(() => {
     const handleDropDownClose = (e) => {
-        if (dropDownRef.current && !dropDownRef.current.contains(e.target)) {
-            setDropdownOpen(false);
-        }
-    }
-      window.addEventListener("mousedown", handleDropDownClose);
-      console.log(window.sessionStorage.getItem("username"))
+      if (dropDownRef.current && !dropDownRef.current.contains(e.target)) {
+        setDropdownOpen(false);
+      }
+    };
+    window.addEventListener("mousedown", handleDropDownClose);
+    console.log(sessionStorage.getItem("username"));
   }, []);
+
   const handleAboutClick = () => {
     if (location.pathname === "/") {
       aboutRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -42,9 +42,7 @@ export default function Navbar({ aboutRef }) {
       </div>
       <div className="flex space-x-4 p-2 max-mobile:hidden">
         <button
-          onClick={() =>
-            window.open("https://www.islrtc.nic.in/", "_blank")
-          }
+          onClick={() => window.open("https://www.islrtc.nic.in/", "_blank")}
           className="text-black font-inter font-bold text-[24px] bg-inherit border-none cursor-pointer"
         >
           ISL
@@ -56,15 +54,26 @@ export default function Navbar({ aboutRef }) {
           {" "}
           {location.pathname === "/" ? "About" : "Home"}
         </button>
-        <button
-          onClick={() => navigate("/Signin")}
-          className="text-black font-inter font-bold text-[24px] bg-inherit border-none cursor-pointer"
-        >
-          Login
-        </button>
+        {sessionStorage.getItem("username") ? (
+          <button
+            onClick={() => {
+              sessionStorage.removeItem("username");
+              navigate("/Signin");
+            }}
+            className="text-black font-inter font-bold text-[24px] bg-inherit border-none cursor-pointer"
+          >
+            Logout
+          </button>
+        ) : (
+          <button
+            onClick={() => navigate("/Signin")}
+            className="text-black font-inter font-bold text-xl bg-inherit border-none cursor-pointer"
+          >
+            Login
+          </button>
+        )}
       </div>
-      <div 
-            ref={dropDownRef} className="mobile:hidden relative">
+      <div ref={dropDownRef} className="mobile:hidden relative">
         <button
           onClick={() => setDropdownOpen(!dropdownOpen)}
           className="text-black font-inter px-2 font-bold text-[24px] bg-inherit border-none cursor-pointer"
@@ -72,9 +81,7 @@ export default function Navbar({ aboutRef }) {
           <img src={dropdownOpen ? "/Menu_open.svg" : "/Menu.svg"} alt="Menu" />
         </button>
         {dropdownOpen && (
-          <div
-            className="absolute right-0 w-48 my-4 mx-2 rounded-md bg-accent"
-          >
+          <div className="absolute right-0 w-48 my-4 mx-2 rounded-md bg-accent">
             <div
               className="py-1 flex flex-col"
               role="menu"
@@ -96,12 +103,25 @@ export default function Navbar({ aboutRef }) {
                 {" "}
                 {location.pathname === "/" ? "About" : "Home"}
               </button>
-              <button
-                onClick={() => navigate("/Signin")}
-                className="text-black font-inter font-bold text-xl bg-inherit border-none cursor-pointer"
-              >
-                {username ? "Logout" : "Login"}
-              </button>
+              {sessionStorage.getItem("username") ? (
+                <button
+                  onClick={() => {
+                    sessionStorage.removeItem("username");
+                    setUsername("");
+                    navigate("/Signin");
+                  }}
+                  className="text-black font-inter font-bold text-xl bg-inherit border-none cursor-pointer"
+                >
+                  Logout
+                </button>
+              ) : (
+                <button
+                  onClick={() => navigate("/Signin")}
+                  className="text-black font-inter font-bold text-xl bg-inherit border-none cursor-pointer"
+                >
+                  Login
+                </button>
+              )}
             </div>
           </div>
         )}

@@ -77,7 +77,16 @@ export default function UploadPage() {
       try {
         const response = await axios.post(`${url}/upload`, formData)
         const doc = new jsPDF();
-        doc.text(response.data.content, 10, 10);
+        const lines = doc.splitTextToSize(response.data.content, 180); 
+        doc.text(lines, 10, 10);
+        doc.setLineWidth(1);
+        doc.rect(10, 10, doc.internal.pageSize.width - 20, doc.internal.pageSize.height - 20);
+        const pageCount = doc.internal.getNumberOfPages();
+        for(let i = 1; i <= pageCount; i++) {
+          doc.setPage(i);
+          doc.text(`Page ${i}`, doc.internal.pageSize.width / 2, doc.internal.pageSize.height - 10, { align: 'center' });
+        }
+  
         doc.save("download.pdf");
         console.log(response.data);
       } catch (err) {

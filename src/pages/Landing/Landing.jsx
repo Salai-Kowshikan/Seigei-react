@@ -24,7 +24,7 @@ export default function LandingPage() {
         description: "Click here to login",
         action: {
           label: "Sign-up/login",
-          onClick: () => navigate('/Signin'),
+          onClick: () => navigate("/Signin"),
         },
       });
     }
@@ -38,11 +38,11 @@ export default function LandingPage() {
           <div className="font-inter text-textc">
             <motion.h1
               className="font-extrabold md:text-8xl text-6xl my-2"
-              initial={{ opacity: 0, x: -100 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1 }}
+              // initial={{ opacity: 0, x: -100 }}
+              // animate={{ opacity: 1, x: 0 }}
+              // transition={{ duration: 1 }}
             >
-              Project <br /> Seigei
+              <p className="typing-project">Project</p> <p className="typing-seigei">Seigei</p>
             </motion.h1>
             <motion.h2
               className="font-bold text-xl"

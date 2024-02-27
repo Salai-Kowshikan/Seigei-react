@@ -23,7 +23,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Ceg Tech Forum
+            CEG Tech Forum
           </a>
         </div>
         <button

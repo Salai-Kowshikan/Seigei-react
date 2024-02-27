@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { toast } from "sonner";
 
 const LoginCard = () => {
     const [email, setEmail] = useState('');
@@ -11,7 +12,6 @@ const LoginCard = () => {
     const [passwordError, setPasswordError] = useState('');
     const [confirmPasswordError, setConfirmPasswordError] = useState('');
     const [opacity, setOpacity] = useState(1);
-    const [error, setError] = useState('');
 
     const navigate = useNavigate();
 
@@ -23,18 +23,20 @@ const LoginCard = () => {
             if (isSignUp) {
                 response = await axios.post('https://seigei-api.onrender.com/register', { name, email, password });
                 if (response.data.success){
-                    alert("Registration Successful! Please log in to continue.")
+                    toast("Registration Successful! Please log in to continue.")
                     setIsSignUp(false);
                     setError('')
                 } else {
-                    setError(response.data.message)
+                    toast(response.data.message)
                 }
             } else {
                 response = await axios.post('https://seigei-api.onrender.com/login', { email, password });
                 if (response.data.success) {
-                    alert("Login Successful!")
+                    toast("Login Successful!")
                     sessionStorage.setItem('username', response.data.primary_key);
                     navigate('/')
+                } else {
+                    toast(response.data.message)
                 }
             }
 
@@ -82,7 +84,7 @@ const LoginCard = () => {
                                 type="text"
                                 id="name"
                                 value={name}
-                                className='w-full bg-white text-textc border-none rounded-lg py-2'
+                                className='w-full bg-white text-textc border-none rounded-lg p-2'
                                 onChange={e => setName(e.target.value)}
                             />
                         </div>
@@ -106,7 +108,7 @@ const LoginCard = () => {
                             id="password"
                             value={password}
                             onChange={e => setPassword(e.target.value)}
-                            className='w-full bg-white text-textc border-none rounded-lg py-2'
+                            className='w-full bg-white text-textc border-none rounded-lg p-2'
                             onBlur={handlePasswordBlur}
                         />
                         {passwordError && <p>{passwordError}</p>}
@@ -120,7 +122,7 @@ const LoginCard = () => {
                                 id="confirmPassword"
                                 value={confirmPassword}
                                 onChange={e => setConfirmPassword(e.target.value)}
-                                className='w-full bg-white text-textc border-none rounded-lg py-2'
+                                className='w-full bg-white text-textc border-none rounded-lg p-2'
                                 onBlur={handleConfirmPasswordBlur}
                             />
                             {confirmPasswordError && <p>{confirmPasswordError}</p>}
@@ -137,9 +139,6 @@ const LoginCard = () => {
                         </button>
                     </div>
                 </form>
-                <div>
-                    {error && <p>{error}</p>}
-                </div>
             </div>
         </>
     );

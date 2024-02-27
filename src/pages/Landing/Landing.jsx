@@ -3,6 +3,7 @@ import Navbar from "@/Components/Navbar/index";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import Footer from "@/Components/Footer";
+import { toast } from "sonner";
 
 export default function LandingPage() {
   const navigate = useNavigate();
@@ -19,8 +20,13 @@ export default function LandingPage() {
     if (username) {
       navigate("/Chat");
     } else {
-      alert("Sign in pandra eruma");
-      navigate("/Signin");
+      toast("You need to register/login to use this feature", {
+        description: "Click here to login",
+        action: {
+          label: "Sign-up/login",
+          onClick: () => navigate('/Signin'),
+        },
+      });
     }
   };
 
@@ -87,7 +93,6 @@ export default function LandingPage() {
           <button
             className="text-textc bg-inherit border-none font-inter font-extrabold cursor-pointer text-5xl py-6 flex-1"
             onClick={handleVideoChat}
-            // onClick={() => navigate("/Chat")}
           >
             {" "}
             VIDEO CHAT{" "}

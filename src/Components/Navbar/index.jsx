@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { toast } from "sonner";
 
 export default function Navbar({ aboutRef }) {
   const navigate = useNavigate();
@@ -67,7 +68,7 @@ export default function Navbar({ aboutRef }) {
         ) : (
           <button
             onClick={() => navigate("/Signin")}
-            className="text-black font-inter font-bold text-xl bg-inherit border-none cursor-pointer"
+            className="text-black font-inter font-bold text-[24px] bg-inherit border-none cursor-pointer"
           >
             Login
           </button>
@@ -108,6 +109,7 @@ export default function Navbar({ aboutRef }) {
                   onClick={() => {
                     sessionStorage.removeItem("username");
                     setUsername("");
+                    toast("Logged out successfully!")
                     navigate("/Signin");
                   }}
                   className="text-black font-inter font-bold text-xl bg-inherit border-none cursor-pointer"
@@ -116,7 +118,9 @@ export default function Navbar({ aboutRef }) {
                 </button>
               ) : (
                 <button
-                  onClick={() => navigate("/Signin")}
+                  onClick={() => {
+                    navigate("/Signin")
+                  }}
                   className="text-black font-inter font-bold text-xl bg-inherit border-none cursor-pointer"
                 >
                   Login

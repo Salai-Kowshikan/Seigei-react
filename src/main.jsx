@@ -7,6 +7,7 @@ import SignIn from './pages/Signin/Signin.jsx'
 import UploadPage from './pages/Interpreter/Upload.jsx'
 import ChatPage from './pages/Meet/vchat.jsx'
 import TeamPage from './pages/Team'
+import { Toaster } from '@/Components/ui/sonner'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -19,5 +20,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='/Team' element={<TeamPage />} />
       </Routes>
     </BrowserRouter>
+    <Toaster />
   </React.StrictMode>,
 )

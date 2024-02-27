@@ -26,10 +26,10 @@ export default function UploadPage() {
           responseType: "blob",
         });
         const blob = new Blob([response.data], { type: "video/mp4" });
-        const url = URL.createObjectURL(blob);
+        const file_url = URL.createObjectURL(blob);
         const link = document.createElement("a");
 
-        link.href = url;
+        link.href = file_url;
         link.download = "audio.mp3";
         document.body.appendChild(link);
         link.click();
@@ -53,9 +53,9 @@ export default function UploadPage() {
           responseType: "blob",
         });
         const blob = new Blob([response.data], { type: "video/mp4" });
-        const url = URL.createObjectURL(blob);
+        const file_url = URL.createObjectURL(blob);
         const link = document.createElement("a");
-        link.href = url;
+        link.href = file_url;
         link.download = "video.mp4";
         document.body.appendChild(link);
         link.click();

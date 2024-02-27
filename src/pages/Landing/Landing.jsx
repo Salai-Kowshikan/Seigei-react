@@ -36,13 +36,13 @@ export default function LandingPage() {
       <div className="flex justify-center items-center min-h-[90svh] max-md:flex-col">
         <div className="md:pl-20 py-3 basis-1/2">
           <div className="font-inter text-textc">
-            <motion.h1
+          <motion.h1
               className="font-extrabold md:text-8xl text-6xl my-2"
-              // initial={{ opacity: 0, x: -100 }}
-              // animate={{ opacity: 1, x: 0 }}
-              // transition={{ duration: 1 }}
+              initial={{ opacity: 0, x: -100 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1 }}
             >
-              <p className="typing-project">Project</p> <p className="typing-seigei">Seigei</p>
+              <p>Project</p> <p>Seigei</p>
             </motion.h1>
             <motion.h2
               className="font-bold text-xl"

@@ -2,36 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-.typing-project {
-  width: 7ch;
-  animation: typing 2s steps(7), blink 0.5s step-end infinite alternate;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid;
-  font-family: monospace;
-}
-.typing-seigei {
-  opacity: 0;
-  width: 6ch;
-  animation: typing 2s steps(6) 2s, blink 0.5s step-end infinite alternate, visible 0s linear 2s forwards;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid;
-  font-family: monospace;
-}
-
-@keyframes visible {
-    100% { opacity: 1; }
-  }
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-}
-
-@keyframes blink {
-  50% {
-    border-color: transparent;
-  }
-}

@@ -103,7 +103,9 @@ export default function UploadPage() {
       try {
         const response = await axios.post(`${url}/upload`, formData);
         const doc = new jsPDF();
+        doc.setFont('Arial')
         const lines = doc.splitTextToSize(response.data.content, 160);
+        console.log(response.data.content);
         doc.text(lines, 20, 20);
         doc.setLineWidth(1);
         doc.rect(

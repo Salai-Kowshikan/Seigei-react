@@ -32,6 +32,7 @@ export default function UploadPage() {
     if (file && lang) {
       const formData = new FormData();
       formData.append("video", file);
+      formData.append("lang", lang);
       try {
         const response = await axios.post(`${url}/audio_convert`, formData, {
           responseType: "blob",
@@ -64,6 +65,7 @@ export default function UploadPage() {
     if (file && lang) {
       const formData = new FormData();
       formData.append("video", file);
+      formData.append("lang", lang);
       try {
         console.log("response poguthu");
         const response = await axios.post(`${url}/download-video`, formData, {
